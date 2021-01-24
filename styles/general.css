@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #e0e0eb;
+    letter-spacing: 0.1rem;
+}
+
+body {
+    /*background-image: url('/images/back.jpg');*/
+    background-image: url('https://image.winudf.com/v2/image1/Y29tLmdvb2RidWlsZGx3cC5sd3BhbGllbndvcmxkc19zY3JlZW5fNl8xNTUwODQ1MDc1XzA5Nw/screen-6.jpg?fakeurl=1&type=.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background {
+    background-color: #011a1f85;
+    background-position: center;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow-y: scroll;
+}

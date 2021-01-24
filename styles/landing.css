@@ -1,0 +1,68 @@
+.container {
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+    margin-top: 20vh;
+    background-color: #07202267;
+    border: 10px solid #01011310;
+    padding: 5%;
+}
+
+.container > h2 {
+    color: #e0e0eb;
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
+}
+
+.container > hr {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    height: 1px;
+    border: none;
+    background-color: #01011342;
+}
+
+.letter {
+    color: #050330ea;
+}
+
+.buttons {
+    width: fit-content;
+    margin: auto;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.button {
+    width: 20vw;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+}
+
+.button > a {
+    text-decoration: none;
+    color: #e0e0eb;
+}
+
+.signin {
+    border: 2px solid #1a140a6e;
+    background-color: #1f1b144f;
+}
+
+.signup {
+    margin-top: 20px;
+    border: 2px solid #01013b6e;
+    background-color: #0202234f;
+}
+
+.signin:hover {
+    background-color: #1f1b1469;
+}
+
+.signup:hover {
+    background-color: #02022369;
+}

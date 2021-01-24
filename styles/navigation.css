@@ -1,0 +1,56 @@
+nav {
+    background-color: #000000;
+    height: auto;
+    text-align: right;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    position: relative;
+}
+
+nav > ul > h2 {
+    padding-top: 10px;
+    position: absolute;
+    left: 10%;
+    font-style: italic;
+}
+
+.letter {
+    color: #46cf8aea;
+}
+
+nav > ul > li {
+    padding: 15px 20px;
+    cursor: pointer;
+}
+/*
+nav > ul > li:hover {
+    background-color: rgba(226, 231, 206, 0.192);
+}*/
+
+nav > ul > li {
+    position: relative;
+}
+
+nav > ul > li::after {
+    content: '';
+    position: absolute;
+    width: auto;
+    height: 0.1rem;
+    left: 20px;
+    right: 20px;
+    bottom: 10px;
+    background: rgba(226, 231, 206, 0.363);
+    transform: scale(0, 1);
+    transition: transform 0.5s ease;
+}
+
+nav > ul > li:hover::after {
+    transform: scale(1, 1);
+}

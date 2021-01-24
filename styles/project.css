@@ -1,0 +1,125 @@
+.title {
+    margin-top: 100px;
+    background-color: #000000b7;
+    border-top: 5px solid rgba(0, 0, 0, 0.034);
+    border-bottom: 10px solid rgba(0, 0, 0, 0.034);
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+.title > h3 {
+    font-size: 1.4rem;
+}
+
+#collaborators-title-container {
+    margin-top: 30px;
+}
+
+#collaborators-title-container > h4 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#collaborators-container {
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collaborator > i {
+    font-size: 3rem;
+    color: #000000d3;
+    cursor: pointer;
+}
+
+.collaborator > i:hover {
+    color: #000000ab;
+}
+
+.collaborator {
+    padding-left: 7px;
+    padding-right: 7px;
+    text-align: center;
+}
+
+#line-1 {
+    height: 2px;
+    width: 40vw;
+    border: none;
+    background-color: #00000062;
+    margin: auto;
+    margin-top: 15px;
+}
+
+#icons {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.icon {
+    font-size: 2rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.63);
+}
+
+.icon:hover {
+    color: rgba(255, 255, 255, 0.836);
+}
+
+#notes-files-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+}
+
+#notes, #links, #files {
+    width: 20vw;
+    margin: 2%;
+    text-align: center;
+}
+
+.note, .link, .file {
+    border: 2px solid rgba(0, 0, 0, 0.623);
+    cursor: pointer;
+}
+
+.note:hover, .link:hover, .file:hover {
+    background-color: rgba(0, 0, 0, 0.562);
+    border: 2px solid rgba(255, 255, 255, 0.623);
+}
+
+.left{
+    width: fit-content;
+}
+.right {
+    text-align: right;
+    position: absolute;
+    right: 3%;
+}
+
+.right > i {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.del-note {
+    color: rgb(204, 167, 171);
+}
+
+.del-note:hover {
+    color: rgb(240, 50, 72);
+}
+
+.item {
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 4%;
+    transition: 0.2s;
+    display: flex;
+    position: relative;
+}

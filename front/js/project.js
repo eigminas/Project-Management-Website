@@ -14,6 +14,44 @@ loadFiles(project_id);
 loadNotes(project_id);
 loadLinks(project_id);
 
+$(document).on("click", ".del-note", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    let noteId = this.id.split('-')[1];
+    let note = $(this).parent().parent();
+    $.ajax({
+        url: 'http://localhost/playing/back/controllers/notes/delete.php/?id='+noteId,
+        type: 'DELETE',
+        success: response => {
+            $(note).fadeOut(500, function(){
+                $(this).remove();
+            });
+        },
+        error: e => {
+            alert(e);
+        }
+    })
+});
+
+$(document).on("click", ".del-link", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    let linkId = this.id.split('-')[1];
+    let link = $(this).parent().parent();
+    $.ajax({
+        url: 'http://localhost/playing/back/controllers/links/delete.php/?id='+linkId,
+        type: 'DELETE',
+        success: response => {
+            $(link).fadeOut(500, function(){
+                $(this).remove();
+            });
+        },
+        error: e => {
+            alert(e);
+        }
+    })
+});
+
 // load all users
 function loadUsers(id) {
     $.ajax({
@@ -62,7 +100,7 @@ function loadFiles(id) {
 // load all notes
 function loadNotes(id) {
     $.ajax({
-        url: 'http://localhost/playing/back/controllers/notes/get.php/title/?project_id=' + id,
+        url: 'http://localhost/playing/back/controllers/notes/get.php/title/id/?project_id=' + id,
         type: 'GET',
         success: response => {
             response.success.map(val => {
@@ -71,7 +109,7 @@ function loadNotes(id) {
                     title = title.substring(0, 15);
                     title = title + '...';
                 } 
-                let html = "<div class=\"note item\"><div class=\"left\"><h5>"+title+"</h5></div><div class=\"right\"><i class=\"fas fa-trash del-note\"></i></div></div>";
+                let html = "<div class=\"note item\"><div class=\"left\"><h5>"+title+"</h5></div><div class=\"right\"><i class=\"fas fa-trash del-note\" id=\"n-"+ val.id + "\"></i></div></div>";
                 if($('.note').last().length === 0) {
                     $('#notes').append(html);
                 } else {
@@ -88,7 +126,7 @@ function loadNotes(id) {
 // load all links
 function loadLinks(id) {
     $.ajax({
-        url: 'http://localhost/playing/back/controllers/links/get.php/name/?project_id=' + id,
+        url: 'http://localhost/playing/back/controllers/links/get.php/name/id/?project_id=' + id,
         type: 'GET',
         success: response => {
             response.success.map(val => {
@@ -97,7 +135,7 @@ function loadLinks(id) {
                     name = name.substring(0, 15);
                     name = name + '...';
                 } 
-                let html = "<div class=\"link item\"><div class=\"left\"><h5>"+name+"</h5></div><div class=\"right\"><i class=\"fas fa-trash del-link\"></i></div></div>";
+                let html = "<div class=\"link item\"><div class=\"left\"><h5>"+name+"</h5></div><div class=\"right\"><i class=\"fas fa-trash del-link\" id=\"n-"+ val.id + "\"></i></div></div>";
                 if($('.link').last().length === 0) {
                     $('#links').append(html);
                 } else {
@@ -147,6 +185,52 @@ $('#note-form').submit(e => {
                 $('#notes').append(html);
             } else {
                 $('.note').last().after(html);
+            }
+        },
+        error: function(){
+            alert('FAILURE');
+        }
+    })
+})
+
+$('#link-form').submit(e => {
+    e.preventDefault();
+    let lname = e.target.lname.value;
+    let ldesc = e.target.ldesc.value;
+    let lurl = e.target.lurl.value;
+    let author = cookies.get('user');
+
+    if(ntitle === '') {
+        return alert('Note title is required');
+    }
+
+    let data = {
+        name: lname,
+        description: ldesc,
+        author: author,
+        project_id: project_id,
+        url: lurl
+    };
+
+    $.ajax({
+        url: 'http://localhost/playing/back/controllers/links/post.php/',
+        type: 'POST',
+        data: JSON.stringify(data),
+        success: function(response){
+            $('.hide-on-click').css('display', 'initial');
+            $('.background').css('overflow-y', 'scroll');
+            $('#noteform').css('display', 'none');
+
+            if(ntitle.length >= 15) {
+                ntitle = ntitle.substring(0, 15);
+                ntitle = ntitle + '...';
+            }
+
+            let html = $("<div class=\"link item\"><div class=\"left\"><h5>"+lname+"</h5></div><div class=\"right\"><i class=\"fas fa-trash del-link\" id=\"n-"+ response.id + "\"></i></div></div>").hide().fadeIn(1000);
+            if($('.link').last().length === 0) {
+                $('#links').append(html);
+            } else {
+                $('.link').last().after(html);
             }
         },
         error: function(){

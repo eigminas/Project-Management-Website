@@ -110,8 +110,12 @@
                 <input type="text" id="lname" name="lname" value=""><br>
               </div>
               <div class="input-field">
-                <label for="nbody">Text</label><br>
-                <textarea rows="4" cols="50" name="nbody" id="nbody"></textarea>
+                <label for="lurl">Link url</label><br>
+                <input type="text" id="lurl" name="lurl" value=""><br>
+              </div>
+              <div class="input-field">
+                <label for="ldesc">Link description</label><br>
+                <textarea rows="4" cols="50" name="ldesc" id="ldesc"></textarea>
               </div>
               <div class="buttons">
                 <input class="button submit" type="submit" value="Add">

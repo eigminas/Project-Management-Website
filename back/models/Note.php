@@ -95,5 +95,32 @@
                 return false;
             }
         }
+
+        public function exists() {
+            $query = 'SELECT * FROM ' . $this->table . ' WHERE id = ?';
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(1, $this->id);
+            $stmt->execute();
+            if($stmt->rowCount() > 0) {
+                return true;
+            }
+            return false;
+        }
+
+        // Delete Note
+        public function delete() {
+            $query = 'DELETE FROM ' . $this->table . ' WHERE id = ?';
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(1, $this->id);
+            if($stmt->execute()) {
+                if($stmt->rowCount() > 0) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            return false;
+        }
     }
 ?>

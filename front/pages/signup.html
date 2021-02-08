@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Testing</title>
+<link rel="stylesheet" href="../styles/general.css">
+<link rel="stylesheet" href="../styles/form.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="background">
+        <div class="form-container">
+            <h2 class="form-heading">Your Account Data</h2>
+            <hr />
+            <form id="signup-form" method="post" action="#">
+              <div class="input-field">
+                  <label for="username">Username</label><br>
+                  <input type="username" id="username" name="username" value=""><br>
+              </div>
+              <div class="input-field">
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" value=""><br>
+              </div>
+              <div class="input-field">
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" value=""><br>
+              </div>
+              <div class="input-field">
+                  <label for="cpassword">Confirm Password</label><br>
+                  <input type="password" id="cpassword" name="cpassword" value=""><br>
+              </div>
+              <div class="buttons">
+                <input class="button submit" id="signup" type="submit" value="Sign Up">
+                <button class="button cancel"><a href="/playing">Cancel</a></button>
+              </div>
+            </form>
+        </div>
+    </div>
+    <script src="../js/signup.js"></script>
+</body>
+</html>

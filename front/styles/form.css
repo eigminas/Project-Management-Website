@@ -1,14 +1,14 @@
-.container {
+.form-container {
     height: fit-content;
     width: fit-content;
     margin: auto;
     margin-top: 20vh;
-    background-color: #07202267;
-    border: 10px solid #01011310;
+    background-color: #0000006b;
+    /*border: 10px solid #01011310;*/
     padding: 5%;
 }
 
-.container > hr {
+.form-container > hr {
     width: 80%;
     margin: auto;
     margin-top: 10px;
@@ -39,21 +39,29 @@ form {
     margin-top: 5px;
 }
 
+.input-field > textarea {
+    border: none;
+    width: 245px;
+    background-color: rgba(250, 250, 250, 0.336);
+    color: black;
+    border: 1px solid rgba(1, 12, 15, 0.76);
+    padding-left: 5px;
+    margin-top: 5px;
+}
+
 .input-field {
     margin-top: 10px;
 }
 
 .buttons {
     margin-top: 35px;
-    position: relative;
 }
 
 .button {
     border: none;
-    width: 120px;
     height: 45px;
     cursor: pointer;
-    position: absolute;
+    width: 48.86408%;
 }
 
 .button > a {
@@ -61,21 +69,19 @@ form {
 }
 
 .submit {
-    background-color: #13789d4f;
-    border: 2px solid #13789d6e;
-    left: 0;
+    background-color: #13789d00;
+    border: 1px solid #13789de7;
 }
 
 .cancel {
-    background-color: #9d132f4f;
-    border: 2px solid #9D132F6e;
-    right: 0;
+    background-color: #13789d00;
+    border: 1px solid #9d132fe7;
 }
 
 .submit:hover {
-    background-color: #13789d69;
+    background-color: #13789d2d;
 }
 
 .cancel:hover {
-    background-color: #9D132F69;
+    background-color: #9D132F2d;
 }

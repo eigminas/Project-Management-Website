@@ -28,6 +28,16 @@
     justify-content: center;
 }
 
+#add-user {
+    font-size: 2.4rem;
+    color: rgba(255, 255, 255, 0.788);
+    cursor: pointer;
+}
+
+#add-user:hover {
+    color: #ffff;
+}
+
 .collaborator > i {
     font-size: 3rem;
     color: #000000d3;
@@ -114,6 +124,22 @@
     color: rgb(240, 50, 72);
 }
 
+.del-file {
+    color: rgb(204, 167, 171);
+}
+
+.del-file:hover {
+    color: rgb(240, 50, 72);
+}
+
+.del-link {
+    color: rgb(204, 167, 171);
+}
+
+.del-link:hover {
+    color: rgb(240, 50, 72);
+}
+
 .item {
     margin-top: 10px;
     padding-top: 10px;
@@ -122,4 +148,8 @@
     transition: 0.2s;
     display: flex;
     position: relative;
+}
+
+.form-container {
+    display: none;
 }

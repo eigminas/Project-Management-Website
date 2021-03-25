@@ -2,9 +2,9 @@
     class Database {
         // DB Params
         private $host = 'localhost';
-        private $db_name = 'playing';
-        private $username = 'playing';
-        private $password = 'playing';
+        private $db_name = '';
+        private $username = '';
+        private $password = '';
         private $conn;
 
         // DB Connection
